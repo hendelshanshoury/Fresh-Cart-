@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+@theme {
+  /* --color-main: #0e46a3; */
+  --color-main: #295f98;
+  --color-main-light: #dff5ff;
+  --color-main-dark: #0a3481;
+
+  --color-primary: #f4f7ff;
+  --color-primary-light: #ffffff;
+  --color-primary-dark: #ccd8ff;
+
+  --color-accent: #ffb703;
+  --color-accent-dark: #d18a00;
+
+  --color-secondary: #8ecae6;
+  --color-secondary-dark: #219ebc;
+  --color-secondary-light: #caf0f8;
+
+  --text-main: #1e1e1e;
+  --text-muted: #6c757d;
+  --text-light: #ffffff;
+
+  /* --shadow-input: rgba(0, 0, 0, 0.16) 0px 1px 4px inset;
+  --shadow-btn: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px; */
+}
+
+/*? =======================================Navbar========================================= */
+.navmd {
+  @apply text-base font-semibold text-main px-6 py-1.5;
+}
+.activemd {
+  @apply text-main-dark bg-primary-light  rounded-3xl px-6;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px inset;
+}
+.navsm {
+  @apply block text-base font-semibold text-main px-1 py-2 my-px;
+}
+.activesm {
+  @apply text-main-dark bg-primary-light  rounded-lg;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px inset;
+}
+.navicon {
+  @apply bg-primary-light text-[18px] font-semibold  rounded-xl px-3 py-1 hover:bg-main hover:text-primary-light mx-2 cursor-pointer;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px inset;
+}
+
+/*? ==========================================Footer======================================== */
+.button-custom {
+  @apply bg-main border-[3px] border-primary-light cursor-pointer  text-primary-light  rounded-3xl px-6 py-2 font-semibold text-base transition duration-300;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px,
+    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px;
+}
+
+/* footer li ul li */
+.anchr {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px inset;
+}
+footer h3::after {
+  content: "";
+  width: 100%;
+  height: 3px;
+  background-color: #0e46a3;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  border-radius: 15%;
+}
+.button-custom:hover {
+  @apply bg-primary-light border-[3px] border-main shadow-inner shadow-[rgba(0,0,0,0.16)_0px_1px_4px] text-main;
+}
+.input-custom {
+  @apply bg-primary-light border-none outline-none rounded-3xl  py-3 font-semibold text-sm transition duration-300;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px inset;
+}
+
+.pagination {
+  justify-content: center;
+  display: flex;
+  padding-left: 0;
+  list-style: none;
+  margin: 0;
+}
+
+.page-item .page-link {
+  position: relative;
+  display: block;
+  margin: 0 2px;
+  min-height: 35px;
+  min-width: 35px;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 40px;
+  color: #295f98;
+  text-decoration: none;
+}
+
+.page-item .page-link:hover {
+  background-color: #cccccc;
+}
+
+.page-item.active .page-link {
+  font-weight: 700;
+  color: #ffffff;
+  background-color: #295f98;
+}
+
+.page-item.disabled .page-link {
+  color: #6c757d;
+  pointer-events: none;
+  cursor: auto;
+}
+
+@media (prefers-color-scheme: dark) {
+  .page-item .page-link {
+    color: #ffffff;
+  }
+
+  .page-item .page-link:hover {
+    background-color: #343a40;
+  }
+
+  .page-item.active .page-link {
+    background-color: #295f98;
+  }
+
+  .page-item.disabled .page-link {
+    color: #6c757d;
+  }
+}
