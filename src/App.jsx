@@ -1,7 +1,6 @@
-// 
+//
 
-
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { HashRouter, RouterProvider } from "react-router-dom";
 import "./App.css";
 import { Suspense, lazy } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -25,22 +24,32 @@ const Footer = lazy(() => import("./components/Footer/Footer"));
 const NotFound = lazy(() => import("./components/NotFound/NotFound"));
 const Categories = lazy(() => import("./components/Categories/Categories"));
 const Cart = lazy(() => import("./components/Cart/Cart"));
-const ForgetPassword = lazy(() => import("./components/ForgetPassword/ForgetPassword"));
+const ForgetPassword = lazy(() =>
+  import("./components/ForgetPassword/ForgetPassword")
+);
 const VerifyCode = lazy(() => import("./components/ForgetPassword/VerifyCode"));
-const ProductDetails = lazy(() => import("./components/ProductDetails/ProductDetails"));
+const ProductDetails = lazy(() =>
+  import("./components/ProductDetails/ProductDetails")
+);
 const WishList = lazy(() => import("./components/WishList/WishList"));
-const CategoryDetails = lazy(() => import("./components/CategoryDetails/CategoryDetails"));
-const BrandDetails = lazy(() => import("./components/BrandDetails/BrandDetails"));
-const AddressCheckoutForm = lazy(() => import("./components/AddressCheckoutForm/AddressCheckoutForm"));
+const CategoryDetails = lazy(() =>
+  import("./components/CategoryDetails/CategoryDetails")
+);
+const BrandDetails = lazy(() =>
+  import("./components/BrandDetails/BrandDetails")
+);
+const AddressCheckoutForm = lazy(() =>
+  import("./components/AddressCheckoutForm/AddressCheckoutForm")
+);
 const PayByCash = lazy(() => import("./components/PayByCash/PayByCash"));
 const PayByOnline = lazy(() => import("./components/PayByOnline/PayByOnline"));
-const AllOrder = lazy(() => import('./components/AllOrder/AllOrder'));
+const AllOrder = lazy(() => import("./components/AllOrder/AllOrder"));
 
-const routers = createBrowserRouter([
+const routers = HashRouter([
   {
     path: "",
     element: (
-      <Suspense fallback={<Loading/>}>
+      <Suspense fallback={<Loading />}>
         <Layout />
       </Suspense>
     ),
@@ -48,7 +57,7 @@ const routers = createBrowserRouter([
       {
         index: true,
         element: (
-          <Suspense fallback={<Loading/>}>
+          <Suspense fallback={<Loading />}>
             <Register />
           </Suspense>
         ),
@@ -56,7 +65,7 @@ const routers = createBrowserRouter([
       {
         path: "login",
         element: (
-          <Suspense fallback={<Loading/>}>
+          <Suspense fallback={<Loading />}>
             <Login />
           </Suspense>
         ),
@@ -64,7 +73,7 @@ const routers = createBrowserRouter([
       {
         path: "forgetpassword",
         element: (
-          <Suspense fallback={<Loading/>}>
+          <Suspense fallback={<Loading />}>
             <ForgetPassword />
           </Suspense>
         ),
@@ -72,7 +81,7 @@ const routers = createBrowserRouter([
       {
         path: "verifycode",
         element: (
-          <Suspense fallback={<Loading/>}>
+          <Suspense fallback={<Loading />}>
             <VerifyCode />
           </Suspense>
         ),
@@ -81,7 +90,7 @@ const routers = createBrowserRouter([
         path: "home",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <Home />
             </Suspense>
           </ProtectedRoute>
@@ -91,7 +100,7 @@ const routers = createBrowserRouter([
         path: "products",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <Products />
             </Suspense>
           </ProtectedRoute>
@@ -101,7 +110,7 @@ const routers = createBrowserRouter([
         path: "brands",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <Brands />
             </Suspense>
           </ProtectedRoute>
@@ -111,7 +120,7 @@ const routers = createBrowserRouter([
         path: "categories",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <Categories />
             </Suspense>
           </ProtectedRoute>
@@ -121,7 +130,7 @@ const routers = createBrowserRouter([
         path: "cart",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <Cart />
             </Suspense>
           </ProtectedRoute>
@@ -131,7 +140,7 @@ const routers = createBrowserRouter([
         path: "wishlist",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <WishList />
             </Suspense>
           </ProtectedRoute>
@@ -141,7 +150,7 @@ const routers = createBrowserRouter([
         path: "PayByCash",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <PayByCash />
             </Suspense>
           </ProtectedRoute>
@@ -151,7 +160,7 @@ const routers = createBrowserRouter([
         path: "paybyonline",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <PayByOnline />
             </Suspense>
           </ProtectedRoute>
@@ -161,7 +170,7 @@ const routers = createBrowserRouter([
         path: "productdetails/:id",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <ProductDetails />
             </Suspense>
           </ProtectedRoute>
@@ -171,7 +180,7 @@ const routers = createBrowserRouter([
         path: "categorydetails/:id",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <CategoryDetails />
             </Suspense>
           </ProtectedRoute>
@@ -181,7 +190,7 @@ const routers = createBrowserRouter([
         path: "brandDetails/:id",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <BrandDetails />
             </Suspense>
           </ProtectedRoute>
@@ -191,7 +200,7 @@ const routers = createBrowserRouter([
         path: "AddressCheckoutForm",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <AddressCheckoutForm />
             </Suspense>
           </ProtectedRoute>
@@ -201,7 +210,7 @@ const routers = createBrowserRouter([
         path: "AllOrder",
         element: (
           <ProtectedRoute>
-            <Suspense fallback={<Loading/>}>
+            <Suspense fallback={<Loading />}>
               <AllOrder />
             </Suspense>
           </ProtectedRoute>
@@ -210,7 +219,7 @@ const routers = createBrowserRouter([
       {
         path: "footer",
         element: (
-          <Suspense fallback={<Loading/>}>
+          <Suspense fallback={<Loading />}>
             <Footer />
           </Suspense>
         ),
