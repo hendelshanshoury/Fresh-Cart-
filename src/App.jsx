@@ -1,6 +1,10 @@
 //
 
-import { HashRouter, RouterProvider } from "react-router-dom";
+import {
+  createBrowserRouter,
+  HashRouter,
+  RouterProvider,
+} from "react-router-dom";
 import "./App.css";
 import { Suspense, lazy } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
@@ -45,7 +49,7 @@ const PayByCash = lazy(() => import("./components/PayByCash/PayByCash"));
 const PayByOnline = lazy(() => import("./components/PayByOnline/PayByOnline"));
 const AllOrder = lazy(() => import("./components/AllOrder/AllOrder"));
 
-const routers = HashRouter([
+const routers = createBrowserRouter([
   {
     path: "",
     element: (
