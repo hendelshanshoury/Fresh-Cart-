@@ -28,7 +28,11 @@ export default function Navbar() {
     <header className="relative z-50 bg-primary">
       <nav className="flex items-center justify-between p-3 lg:px-15 shadow-md">
         <div className="flex lg:flex-1">
-          <Logo />
+          <NavLink to={""} className="-m-1.5 p-1.5 flex lg:flex-1 items-center">
+            <i className="fa-solid fa-cart-shopping text-main text-2xl mx-3" />
+            <h1 className="text-main text-xl font-bold pb-1">Fresh Cart</h1>
+            <span className="sr-only">Your Company</span>
+          </NavLink>{" "}
         </div>
 
         {/* Mobile menu toggle */}
