@@ -2,10 +2,10 @@
 
 import React, { useContext, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
-import Logo from "./logo";
 import { UserContext } from "../context/UserContext";
 import { CartContext } from "../context/CartContext";
 import { WishListContext } from "../context/WishListContext";
+import Logo from "./logo";
 
 export default function Navbar() {
   let { userToken, setUserToken } = useContext(UserContext);
