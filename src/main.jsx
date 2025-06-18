@@ -9,6 +9,6 @@ import "react-responsive-pagination/themes/minimal.css";
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-     <App />
- </StrictMode>
+    <App />
+  </StrictMode>
 );
